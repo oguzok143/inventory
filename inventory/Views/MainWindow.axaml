@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:inventory.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="inventory.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="inventory">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <TabControl>
+        <TabItem Header="Справочники">
+            <Grid RowDefinitions="Auto *">
+                <ScrollViewer>
+                    <TabControl>
+                        <TabItem Header="Техника">
+                            <DataGrid ItemsSource="{Binding Techs}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Инв. номер" Binding="{Binding InvNumber}"/>
+                                    <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Дата покупки" Binding="{Binding PurchaseDate}"/>
+                                    <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"/>
+                                    <DataGridTextColumn Header="Списана ли" Binding="{Binding IsWrittenOff}"/>
+                                    <DataGridTextColumn Header="Ответсвенный сотрудник" Binding="{Binding CurrentEmployeeFullName}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                        
+                        <TabItem Header="Сотрудники">
+                            <DataGrid ItemsSource="{Binding Emplyees}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
+                                    <DataGridTextColumn Header="Должность" Binding="{Binding PositionName}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                        
+                        <TabItem Header="Должности">
+                            <DataGrid ItemsSource="{Binding Positions}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                    </TabControl>
+                </ScrollViewer>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Передача техники">
+            
+        </TabItem>
+    </TabControl>    
+</Window>
