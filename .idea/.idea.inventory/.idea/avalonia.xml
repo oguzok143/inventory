@@ -6,6 +6,7 @@
         <entry key="inventory/App.axaml" value="inventory/inventory.csproj" />
         <entry key="inventory/Views/GuideWindow.axaml" value="inventory/inventory.csproj" />
         <entry key="inventory/Views/MainWindow.axaml" value="inventory/inventory.csproj" />
+        <entry key="inventory/Views/TechEditWindow.axaml" value="inventory/inventory.csproj" />
       </map>
     </option>
   </component>

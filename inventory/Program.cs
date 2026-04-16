@@ -30,7 +30,11 @@ sealed class Program
                     GetSection("DatabaseConnection"));
                 s.AddTransient<MainWindow>();
                 s.AddTransient<MainWindowViewModel>();
+                s.AddTransient<TechEditWindow>();
+                s.AddTransient<TechEditViewModel>();
+
                 s.AddSingleton<MainRepository>();
+                s.AddSingleton<TechRepository>();
             }).
             Build();
         BuildAvaloniaApp(host.Services)

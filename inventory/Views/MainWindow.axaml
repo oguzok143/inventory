@@ -21,16 +21,19 @@
                 <ScrollViewer>
                     <TabControl>
                         <TabItem Header="Техника">
-                            <DataGrid ItemsSource="{Binding Techs}" IsReadOnly="True">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Инв. номер" Binding="{Binding InvNumber}"/>
-                                    <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
-                                    <DataGridTextColumn Header="Дата покупки" Binding="{Binding PurchaseDate}"/>
-                                    <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"/>
-                                    <DataGridTextColumn Header="Списана ли" Binding="{Binding IsWrittenOff}"/>
-                                    <DataGridTextColumn Header="Ответсвенный сотрудник" Binding="{Binding CurrentEmployeeFullName}"/>
-                                </DataGrid.Columns>
-                            </DataGrid>
+                            <Grid Grid.RowDefinitions="Auto *">
+                                <DataGrid ItemsSource="{Binding Techs}" IsReadOnly="True" SelectedItem="{Binding SelectedTech}" DoubleTapped="{Binding OpenTechEditCommand}">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Инв. номер" Binding="{Binding InvNumber}"/>
+                                        <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Дата покупки" Binding="{Binding PurchaseDate}"/>
+                                        <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"/>
+                                        <DataGridTextColumn Header="Списана ли" Binding="{Binding IsWrittenOff}"/>
+                                        <DataGridTextColumn Header="Ответсвенный сотрудник" Binding="{Binding CurrentEmployeeFullName}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <Button Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Добавить" Command="{Binding OpenTechEdit}"/>
+                            </Grid>
                         </TabItem>
                         
                         <TabItem Header="Сотрудники">

@@ -64,7 +64,7 @@ public class MainRepository
         try
         {
             connection.Open();
-            string sql = "select e.FullName, p.Name  from Employees e join Positions p on e.PositionId = p.Id;";
+            string sql = "select e.Id, e.FullName, e.PositionId, p.Name  from Employees e join Positions p on e.PositionId = p.Id;";
             using (var mc = new MySqlCommand(sql, connection))
             using (var dr = mc.ExecuteReader())
             {

@@ -19,10 +19,10 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly MainRepository _repository;
     public Window _currentWindow;
     
-    //[ObservableProperty] public List<VisualTech> _visualTechs;
     [ObservableProperty] public List<Tech> _techs;
     [ObservableProperty] public List<Employee> _emplyees;
     [ObservableProperty] public List<Position> _positions;
+    [ObservableProperty] public Tech _selectedTech;
     
     public MainWindowViewModel(IServiceProvider serviceProvider, MainRepository repository)
     {
@@ -55,20 +55,12 @@ public partial class MainWindowViewModel : ViewModelBase
         _currentWindow = win;
     }
 
-
-    // public void GetVisualTechs()
-    // {
-    //     for (int i = 0; i < Techs.Count; i++)
-    //     {
-    //         VisualTechs.Add(new VisualTech
-    //         {
-    //             InvNumber = Techs[i].InvNumber,
-    //             Name = Techs[i].Name,
-    //             PurchaseDate = Techs[i].PurchaseDate,
-    //             Cost = Techs[i].Cost,
-    //             IsWrittenString = Techs[i].IsWrittenOff == 1 ? "да" : "нет",
-    //             CurrentEmployeeName = Emplyees.FirstOrDefault(s => s.Id == Techs[i].CurrentEmployeeId).FullName
-    //         });
-    //     }
-    // }
+    [RelayCommand]
+    public void OpenTechEdit()
+    {
+        var win = _provider.GetRequiredService<TechEditWindow>();
+        var vm = ActivatorUtilities.CreateInstance<TechEditViewModel>(_provider, SelectedTech);
+        win.DataContext = vm;
+        win.Show();
+    }
 }
