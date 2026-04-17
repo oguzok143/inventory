@@ -58,7 +58,7 @@ public class MainRepository
         return techs;
     }
     
-    public List<Employee> GetEmpyees()
+    public List<Employee> GetEmployees()
     {
         List<Employee> employees = new List<Employee>();
         try

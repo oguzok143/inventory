@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -15,7 +16,7 @@ public partial class TechEditViewModel : ViewModelBase
     
     [ObservableProperty] public Tech _selectedTech;
     [ObservableProperty] public Employee _selectedEmployee;
-    //[ObservableProperty] public Employee _selectedEmployee;
+    [ObservableProperty] public List<Employee> _employees;
 
     public TechEditViewModel(IServiceProvider serviceProvider, TechRepository techRepository, MainRepository mainRepository, Tech selectedTech)
     {
@@ -23,6 +24,8 @@ public partial class TechEditViewModel : ViewModelBase
         _repository = techRepository;
         _mainRepository = mainRepository;
         SelectedTech = selectedTech;
+        
+        GetEmployees();
     }
 
     [RelayCommand]
@@ -32,6 +35,13 @@ public partial class TechEditViewModel : ViewModelBase
             _repository.InsertTech(SelectedTech);
         else 
             _repository.UpdateTech(SelectedTech);
-            
+
+        GetEmployees();
     }
+    
+    private void GetEmployees()
+    {
+        Employees = _mainRepository.GetEmployees();
+    }
+
 }

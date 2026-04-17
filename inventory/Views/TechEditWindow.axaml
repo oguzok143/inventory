@@ -14,6 +14,7 @@
                 <TextBox Watermark="Дата покупки" Text="{Binding SelectedTech.PurchaseDate}"/>
                 <TextBox Watermark="Цена" Text="{Binding SelectedTech.Cost}"/>
                 <TextBox Watermark="Списано ли" Text="{Binding SelectedTech.IsWrittenOff}"/>
-                <!-- <ComboBox SelectedItem="{Binding SelectedEmployee}" ItemsSource="{Binding }"/> -->
+                <ComboBox SelectedItem="{Binding SelectedEmployee}" ItemsSource="{Binding Employees}" DisplayMemberBinding="{Binding FullName}"/>
+                <Button Content="Сохранить" Command="{Binding Save}"/>
         </StackPanel>
 </Window>

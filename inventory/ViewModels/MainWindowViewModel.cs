@@ -41,7 +41,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private void GetEmployees()
     {
-        Emplyees = _repository.GetEmpyees();
+        Emplyees = _repository.GetEmployees();
     }
     
     private void GetPositions()

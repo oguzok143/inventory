@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/student/RiderProjects/inventory123/inventory/inventory.csproj": {}
+    "C:\\Users\\zahar\\RiderProjects\\inventory\\inventory\\inventory.csproj": {}
   },
   "projects": {
-    "/home/student/RiderProjects/inventory123/inventory/inventory.csproj": {
+    "C:\\Users\\zahar\\RiderProjects\\inventory\\inventory\\inventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/student/RiderProjects/inventory123/inventory/inventory.csproj",
+        "projectUniqueName": "C:\\Users\\zahar\\RiderProjects\\inventory\\inventory\\inventory.csproj",
         "projectName": "inventory",
-        "projectPath": "/home/student/RiderProjects/inventory123/inventory/inventory.csproj",
-        "packagesPath": "/home/student/.nuget/packages/",
-        "outputPath": "/home/student/RiderProjects/inventory123/inventory/obj/",
+        "projectPath": "C:\\Users\\zahar\\RiderProjects\\inventory\\inventory\\inventory.csproj",
+        "packagesPath": "C:\\Users\\zahar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zahar\\RiderProjects\\inventory\\inventory\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/student/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\zahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "http://192.168.200.81:8081/repository/nuget.org-proxy/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -38,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -101,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/student/.dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
