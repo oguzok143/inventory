@@ -3840,19 +3840,19 @@
     ]
   },
   "packageFolders": {
-    "/home/user/.nuget/packages/": {}
+    "/home/student/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/user/RiderProjects/inventory/inventory/inventory.csproj",
+      "projectUniqueName": "/home/student/RiderProjects/inventory123/inventory/inventory.csproj",
       "projectName": "inventory",
-      "projectPath": "/home/user/RiderProjects/inventory/inventory/inventory.csproj",
-      "packagesPath": "/home/user/.nuget/packages/",
-      "outputPath": "/home/user/RiderProjects/inventory/inventory/obj/",
+      "projectPath": "/home/student/RiderProjects/inventory123/inventory/inventory.csproj",
+      "packagesPath": "/home/student/.nuget/packages/",
+      "outputPath": "/home/student/RiderProjects/inventory123/inventory/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/user/.nuget/NuGet/NuGet.Config"
+        "/home/student/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -3876,7 +3876,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -3939,7 +3939,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/user/.dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/student/.dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

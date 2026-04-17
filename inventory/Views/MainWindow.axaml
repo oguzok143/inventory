@@ -22,7 +22,7 @@
                     <TabControl>
                         <TabItem Header="Техника">
                             <Grid Grid.RowDefinitions="Auto *">
-                                <DataGrid ItemsSource="{Binding Techs}" IsReadOnly="True" SelectedItem="{Binding SelectedTech}" DoubleTapped="{Binding OpenTechEditCommand}">
+                                <DataGrid ItemsSource="{Binding Techs}" IsReadOnly="True" SelectedItem="{Binding SelectedTech}">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Инв. номер" Binding="{Binding InvNumber}"/>
                                         <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
@@ -32,7 +32,7 @@
                                         <DataGridTextColumn Header="Ответсвенный сотрудник" Binding="{Binding CurrentEmployeeFullName}"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
-                                <Button Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Добавить" Command="{Binding OpenTechEdit}"/>
+                                <Button Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Добавить" Command="{Binding OpenTechAdd}"/>
                             </Grid>
                         </TabItem>
                         

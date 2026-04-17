@@ -17,7 +17,6 @@ public partial class MainWindowViewModel : ViewModelBase
 {
     private readonly IServiceProvider _provider;
     private readonly MainRepository _repository;
-    public Window _currentWindow;
     
     [ObservableProperty] public List<Tech> _techs;
     [ObservableProperty] public List<Employee> _emplyees;
@@ -50,16 +49,33 @@ public partial class MainWindowViewModel : ViewModelBase
         Positions = _repository.GetPositions();
     }
 
-    public void SetScreen(MainWindow win)
+    [RelayCommand]
+    public void OpenTechAdd()
     {
-        _currentWindow = win;
+        Tech NewTech = new Tech();
+        NewTech.Id = 0;
+        NewTech.InvNumber = "";
+        NewTech.Name = "New Tech";
+        NewTech.PurchaseDate = DateTime.Now;
+        NewTech.Cost = 0;
+        NewTech.IsWrittenOff = 0;
+        NewTech.CurrentEmployeeId = 0;
+        NewTech.CurrentEmployeeFullName = "";
+        OpenEditWindow(NewTech);
     }
 
     [RelayCommand]
     public void OpenTechEdit()
     {
+        if (SelectedTech == null)
+            return;
+        OpenEditWindow(SelectedTech);
+    }
+
+    private void OpenEditWindow(Tech tech)
+    {
         var win = _provider.GetRequiredService<TechEditWindow>();
-        var vm = ActivatorUtilities.CreateInstance<TechEditViewModel>(_provider, SelectedTech);
+        var vm = ActivatorUtilities.CreateInstance<TechEditViewModel>(_provider, tech);
         win.DataContext = vm;
         win.Show();
     }

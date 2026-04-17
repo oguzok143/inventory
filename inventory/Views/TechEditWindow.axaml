@@ -2,11 +2,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:inventory.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="inventory.Views.TechEditWindow"
+        x:DataType="vm:TechEditViewModel"
         Title="TechEditWindow">
         
         <StackPanel>
-                <!-- <TextBox Watermark="Инвентарный номер" Text="{Binding }"/> -->
+                <TextBox Watermark="Инвентарный номер" Text="{Binding SelectedTech.InvNumber}"/>
+                <TextBox Watermark="Название" Text="{Binding SelectedTech.Name}"/>
+                <TextBox Watermark="Дата покупки" Text="{Binding SelectedTech.PurchaseDate}"/>
+                <TextBox Watermark="Цена" Text="{Binding SelectedTech.Cost}"/>
+                <TextBox Watermark="Списано ли" Text="{Binding SelectedTech.IsWrittenOff}"/>
+                <!-- <ComboBox SelectedItem="{Binding SelectedEmployee}" ItemsSource="{Binding }"/> -->
         </StackPanel>
 </Window>
